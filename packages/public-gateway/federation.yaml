@@ -3,5 +3,5 @@ subgraphs:
   features:
     routing_url: http://localhost:7001/graphql/
     schema:
-      # subgraph_url: http://localhost:7001/graphql/
-      file: ../config-service/src/graph/main.graphql
+      subgraph_url: http://localhost:7001/graphql/
+      # file: ../config-service/src/graph/main.graphql
