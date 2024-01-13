@@ -1,4 +1,12 @@
-#import "./features.graphql"
+extend schema
+    @link(url: "https://specs.apollo.dev/federation/v2.3",
+          import: ["@key", "@shareable", "@inaccessible"])
+
+type Feature @key(fields: "name") {
+    name: String!
+    description: String @inaccessible
+    enabled: Boolean! @shareable
+}
 
 type Query {
     features: [Feature]

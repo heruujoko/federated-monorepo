@@ -1,9 +1,9 @@
-const { loadSchemaSync } = require("@graphql-tools/load");
-const { GraphQLFileLoader } = require("@graphql-tools/graphql-file-loader");
-const { join } = require("path");
+require('graphql-import-node/register');
 
-const schema = loadSchemaSync(join(__dirname, "./graph/main.graphql"), {
-  loaders: [new GraphQLFileLoader()],
-});
+const { buildSubgraphSchema } = require("@apollo/subgraph")
+const schemaFile = require('./graph/main.graphql');
+const gql = require("graphql-tag");
+
+const schema = buildSubgraphSchema([schemaFile])
 
 export default schema;

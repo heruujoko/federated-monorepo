@@ -13,6 +13,12 @@ server.use(
       rootValue: root,
       graphiql: true,
     })
-  );
+);
+
+server.get("/", (req, res) => {
+    res.json({
+      server_time: new Date()
+    });
+});
 
 export default server;

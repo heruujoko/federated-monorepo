@@ -1,5 +1,0 @@
-type Feature {
-  name: String!
-  description: String
-  enabled: Boolean!
-}
