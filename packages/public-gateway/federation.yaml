@@ -1,7 +1,11 @@
 federation_version: =2.3.2
 subgraphs:
   features:
-    routing_url: http://localhost:7001/graphql/
+    routing_url: http://localhost:7001/graphql
     schema:
-      subgraph_url: http://localhost:7001/graphql/
+      subgraph_url: http://localhost:7001/graphql
       # file: ../config-service/src/graph/main.graphql
+  foo:
+    routing_url: http://localhost:7002/graphql
+    schema:
+      subgraph_url: http://localhost:7002/graphql

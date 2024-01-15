@@ -30,10 +30,18 @@ type Feature
   enabled: Boolean!
 }
 
+type Foo
+  @join__type(graph: FOO, key: "id")
+{
+  id: ID!
+  name: String
+}
+
 scalar join__FieldSet
 
 enum join__Graph {
   FEATURES @join__graph(name: "features", url: "http://localhost:7001/graphql/")
+  FOO @join__graph(name: "foo", url: "http://localhost:7002/graphql")
 }
 
 scalar link__Import
@@ -52,6 +60,8 @@ enum link__Purpose {
 
 type Query
   @join__type(graph: FEATURES)
+  @join__type(graph: FOO)
 {
-  features: [Feature]
+  features: [Feature] @join__field(graph: FEATURES)
+  foo(id: ID!): Foo @join__field(graph: FOO)
 }
