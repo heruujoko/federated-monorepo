@@ -5,7 +5,10 @@ type Feature = {
 }
 
 
-const getFeatures = (): Feature[] => {
+const getFeatures = (_: any,req: any): Feature[] => {
+    console.log({
+        headers: req.headers
+    })
     return [
         {
             name: 'feature1',
