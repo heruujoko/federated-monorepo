@@ -1,15 +1,18 @@
 package graph
 
-import "example.com/subgraph-template-go-gqlgen-boilerplate/graph/model"
+import (
+	"github.com/google/uuid"
+	"github.com/icrowley/fake"
+
+	"example.com/subgraph-template-go-gqlgen-boilerplate/graph/model"
+)
 
 func FindFoo(id string) (*model.Foo, error) {
-	if id == "1" {
-		var nameValue = "Name"
-		return &model.Foo{
-			ID:   "1",
-			Name: &nameValue,
-		}, nil
-	} else {
-		return nil, nil
+	uuid := uuid.New()
+	name := fake.FullName()
+	var foo = model.Foo{
+		ID:   uuid.String(),
+		Name: &name,
 	}
+	return &foo, nil
 }

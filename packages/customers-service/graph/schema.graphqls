@@ -1,3 +1,5 @@
+scalar Timestamp
+
 directive @contact(
   "Contact title of the subgraph owner"
   name: String!
@@ -22,8 +24,18 @@ schema
 
 type Query {
   foo(id: ID!): Foo
+  customers: [Customer]
 }
 type Foo @key(fields: "id") {
   id: ID! @shareable
   name: String @shareable
+}
+
+type Customer {
+  id: ID! @shareable
+  name: String! @shareable
+  email: String! @shareable
+  created_at: Timestamp! @shareable
+  updated_at: Timestamp @shareable
+  deleted_at: Timestamp @shareable
 }

@@ -60,3 +60,6 @@ models:
       - github.com/99designs/gqlgen/graphql.Int
       - github.com/99designs/gqlgen/graphql.Int64
       - github.com/99designs/gqlgen/graphql.Int32
+  Timestamp:
+    model:
+      - example.com/subgraph-template-go-gqlgen-boilerplate/helpers.Timestamp
