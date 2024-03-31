@@ -4,7 +4,7 @@ import (
 	"github.com/google/uuid"
 	"github.com/icrowley/fake"
 
-	"example.com/subgraph-template-go-gqlgen-boilerplate/graph/model"
+	"github.com/heruujoko/federated-monorepo/customers-service/model"
 )
 
 func FindFoo(id string) (*model.Foo, error) {

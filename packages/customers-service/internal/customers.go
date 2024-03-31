@@ -6,7 +6,7 @@ import (
 	"github.com/google/uuid"
 	"github.com/icrowley/fake"
 
-	"example.com/subgraph-template-go-gqlgen-boilerplate/graph/model"
+	"github.com/heruujoko/federated-monorepo/customers-service/model"
 )
 
 func ResolveCustomers() ([]*model.Customer, error) {

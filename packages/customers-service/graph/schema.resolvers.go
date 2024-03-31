@@ -7,9 +7,9 @@ package graph
 import (
 	"context"
 
-	"example.com/subgraph-template-go-gqlgen-boilerplate/graph/generated"
-	"example.com/subgraph-template-go-gqlgen-boilerplate/graph/model"
-	"example.com/subgraph-template-go-gqlgen-boilerplate/internal"
+	"github.com/heruujoko/federated-monorepo/customers-service/graph/generated"
+	"github.com/heruujoko/federated-monorepo/customers-service/internal"
+	"github.com/heruujoko/federated-monorepo/customers-service/model"
 )
 
 // Foo is the resolver for the foo field.

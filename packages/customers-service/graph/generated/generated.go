@@ -12,11 +12,11 @@ import (
 	"sync/atomic"
 	"time"
 
-	"example.com/subgraph-template-go-gqlgen-boilerplate/graph/model"
-	"example.com/subgraph-template-go-gqlgen-boilerplate/helpers"
 	"github.com/99designs/gqlgen/graphql"
 	"github.com/99designs/gqlgen/graphql/introspection"
 	"github.com/99designs/gqlgen/plugin/federation/fedruntime"
+	"github.com/heruujoko/federated-monorepo/customers-service/helpers"
+	"github.com/heruujoko/federated-monorepo/customers-service/model"
 	gqlparser "github.com/vektah/gqlparser/v2"
 	"github.com/vektah/gqlparser/v2/ast"
 )
@@ -845,7 +845,7 @@ func (ec *executionContext) _Entity_findFooByID(ctx context.Context, field graph
 	}
 	res := resTmp.(*model.Foo)
 	fc.Result = res
-	return ec.marshalNFoo2ᚖexampleᚗcomᚋsubgraphᚑtemplateᚑgoᚑgqlgenᚑboilerplateᚋgraphᚋmodelᚐFoo(ctx, field.Selections, res)
+	return ec.marshalNFoo2ᚖgithubᚗcomᚋheruujokoᚋfederatedᚑmonorepoᚋcustomersᚑserviceᚋmodelᚐFoo(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Entity_findFooByID(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -988,7 +988,7 @@ func (ec *executionContext) _Query_foo(ctx context.Context, field graphql.Collec
 	}
 	res := resTmp.(*model.Foo)
 	fc.Result = res
-	return ec.marshalOFoo2ᚖexampleᚗcomᚋsubgraphᚑtemplateᚑgoᚑgqlgenᚑboilerplateᚋgraphᚋmodelᚐFoo(ctx, field.Selections, res)
+	return ec.marshalOFoo2ᚖgithubᚗcomᚋheruujokoᚋfederatedᚑmonorepoᚋcustomersᚑserviceᚋmodelᚐFoo(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Query_foo(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -1046,7 +1046,7 @@ func (ec *executionContext) _Query_customers(ctx context.Context, field graphql.
 	}
 	res := resTmp.([]*model.Customer)
 	fc.Result = res
-	return ec.marshalOCustomer2ᚕᚖexampleᚗcomᚋsubgraphᚑtemplateᚑgoᚑgqlgenᚑboilerplateᚋgraphᚋmodelᚐCustomer(ctx, field.Selections, res)
+	return ec.marshalOCustomer2ᚕᚖgithubᚗcomᚋheruujokoᚋfederatedᚑmonorepoᚋcustomersᚑserviceᚋmodelᚐCustomer(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Query_customers(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -3833,11 +3833,11 @@ func (ec *executionContext) marshalNFieldSet2string(ctx context.Context, sel ast
 	return res
 }
 
-func (ec *executionContext) marshalNFoo2exampleᚗcomᚋsubgraphᚑtemplateᚑgoᚑgqlgenᚑboilerplateᚋgraphᚋmodelᚐFoo(ctx context.Context, sel ast.SelectionSet, v model.Foo) graphql.Marshaler {
+func (ec *executionContext) marshalNFoo2githubᚗcomᚋheruujokoᚋfederatedᚑmonorepoᚋcustomersᚑserviceᚋmodelᚐFoo(ctx context.Context, sel ast.SelectionSet, v model.Foo) graphql.Marshaler {
 	return ec._Foo(ctx, sel, &v)
 }
 
-func (ec *executionContext) marshalNFoo2ᚖexampleᚗcomᚋsubgraphᚑtemplateᚑgoᚑgqlgenᚑboilerplateᚋgraphᚋmodelᚐFoo(ctx context.Context, sel ast.SelectionSet, v *model.Foo) graphql.Marshaler {
+func (ec *executionContext) marshalNFoo2ᚖgithubᚗcomᚋheruujokoᚋfederatedᚑmonorepoᚋcustomersᚑserviceᚋmodelᚐFoo(ctx context.Context, sel ast.SelectionSet, v *model.Foo) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
@@ -4424,7 +4424,7 @@ func (ec *executionContext) marshalOBoolean2ᚖbool(ctx context.Context, sel ast
 	return res
 }
 
-func (ec *executionContext) marshalOCustomer2ᚕᚖexampleᚗcomᚋsubgraphᚑtemplateᚑgoᚑgqlgenᚑboilerplateᚋgraphᚋmodelᚐCustomer(ctx context.Context, sel ast.SelectionSet, v []*model.Customer) graphql.Marshaler {
+func (ec *executionContext) marshalOCustomer2ᚕᚖgithubᚗcomᚋheruujokoᚋfederatedᚑmonorepoᚋcustomersᚑserviceᚋmodelᚐCustomer(ctx context.Context, sel ast.SelectionSet, v []*model.Customer) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}
@@ -4451,7 +4451,7 @@ func (ec *executionContext) marshalOCustomer2ᚕᚖexampleᚗcomᚋsubgraphᚑte
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalOCustomer2ᚖexampleᚗcomᚋsubgraphᚑtemplateᚑgoᚑgqlgenᚑboilerplateᚋgraphᚋmodelᚐCustomer(ctx, sel, v[i])
+			ret[i] = ec.marshalOCustomer2ᚖgithubᚗcomᚋheruujokoᚋfederatedᚑmonorepoᚋcustomersᚑserviceᚋmodelᚐCustomer(ctx, sel, v[i])
 		}
 		if isLen1 {
 			f(i)
@@ -4465,14 +4465,14 @@ func (ec *executionContext) marshalOCustomer2ᚕᚖexampleᚗcomᚋsubgraphᚑte
 	return ret
 }
 
-func (ec *executionContext) marshalOCustomer2ᚖexampleᚗcomᚋsubgraphᚑtemplateᚑgoᚑgqlgenᚑboilerplateᚋgraphᚋmodelᚐCustomer(ctx context.Context, sel ast.SelectionSet, v *model.Customer) graphql.Marshaler {
+func (ec *executionContext) marshalOCustomer2ᚖgithubᚗcomᚋheruujokoᚋfederatedᚑmonorepoᚋcustomersᚑserviceᚋmodelᚐCustomer(ctx context.Context, sel ast.SelectionSet, v *model.Customer) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}
 	return ec._Customer(ctx, sel, v)
 }
 
-func (ec *executionContext) marshalOFoo2ᚖexampleᚗcomᚋsubgraphᚑtemplateᚑgoᚑgqlgenᚑboilerplateᚋgraphᚋmodelᚐFoo(ctx context.Context, sel ast.SelectionSet, v *model.Foo) graphql.Marshaler {
+func (ec *executionContext) marshalOFoo2ᚖgithubᚗcomᚋheruujokoᚋfederatedᚑmonorepoᚋcustomersᚑserviceᚋmodelᚐFoo(ctx context.Context, sel ast.SelectionSet, v *model.Foo) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}

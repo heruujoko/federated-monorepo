@@ -13,7 +13,7 @@ federation:
 
 # Where should any generated models go?
 model:
-  filename: graph/model/models_gen.go
+  filename: model/models_gen.go
   package: model
 
 # Where should the resolver implementations go?
@@ -41,7 +41,7 @@ resolver:
 # gqlgen will search for any type names in the schema in these go packages
 # if they match it will use them, otherwise it will generate them.
 autobind:
-#  - "example.com/subgraph-template-go-gqlgen-boilerplate/graph/model"
+#  - "github.com/heruujoko/federated-monorepo/customers-service/model"
 
 # This section declares type mapping between the GraphQL and go type systems
 #
@@ -62,4 +62,4 @@ models:
       - github.com/99designs/gqlgen/graphql.Int32
   Timestamp:
     model:
-      - example.com/subgraph-template-go-gqlgen-boilerplate/helpers.Timestamp
+      - github.com/heruujoko/federated-monorepo/customers-service/helpers.Timestamp

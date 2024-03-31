@@ -1,10 +1,10 @@
-module example.com/subgraph-template-go-gqlgen-boilerplate
+module github.com/heruujoko/federated-monorepo/customers-service
 
 go 1.19
 
 require (
 	github.com/99designs/gqlgen v0.17.45
-	github.com/go-chi/chi/v5 v5.0.11
+	github.com/go-chi/chi/v5 v5.0.12
 	github.com/google/uuid v1.6.0
 	github.com/icrowley/fake v0.0.0-20221112152111-d7b7e2276db2
 	github.com/stretchr/testify v1.9.0

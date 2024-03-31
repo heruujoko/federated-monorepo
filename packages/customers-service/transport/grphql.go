@@ -3,10 +3,10 @@ package transport
 import (
 	"github.com/go-chi/chi/v5"
 
-	"example.com/subgraph-template-go-gqlgen-boilerplate/graph"
-	"example.com/subgraph-template-go-gqlgen-boilerplate/graph/generated"
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
+	"github.com/heruujoko/federated-monorepo/customers-service/graph"
+	"github.com/heruujoko/federated-monorepo/customers-service/graph/generated"
 )
 
 func UseGraphqlTransport(router *chi.Mux) error {

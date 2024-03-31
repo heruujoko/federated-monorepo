@@ -3,11 +3,11 @@ package main
 import (
 	"testing"
 
-	"example.com/subgraph-template-go-gqlgen-boilerplate/graph"
-	"example.com/subgraph-template-go-gqlgen-boilerplate/graph/generated"
-	"example.com/subgraph-template-go-gqlgen-boilerplate/graph/model"
 	"github.com/99designs/gqlgen/client"
 	"github.com/99designs/gqlgen/graphql/handler"
+	"github.com/heruujoko/federated-monorepo/customers-service/graph"
+	"github.com/heruujoko/federated-monorepo/customers-service/graph/generated"
+	"github.com/heruujoko/federated-monorepo/customers-service/model"
 
 	"github.com/stretchr/testify/assert"
 )

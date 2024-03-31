@@ -7,8 +7,8 @@ package graph
 import (
 	"context"
 
-	"example.com/subgraph-template-go-gqlgen-boilerplate/graph/generated"
-	"example.com/subgraph-template-go-gqlgen-boilerplate/graph/model"
+	"github.com/heruujoko/federated-monorepo/customers-service/graph/generated"
+	"github.com/heruujoko/federated-monorepo/customers-service/model"
 )
 
 // FindFooByID is the resolver for the findFooByID field.

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"example.com/subgraph-template-go-gqlgen-boilerplate/transport"
+	"github.com/heruujoko/federated-monorepo/customers-service/transport"
 )
 
 func main() {
