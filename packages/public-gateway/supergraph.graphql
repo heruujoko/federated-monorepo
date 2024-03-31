@@ -22,6 +22,17 @@ directive @join__unionMember(graph: join__Graph!, member: String!) repeatable on
 
 directive @link(url: String, as: String, for: link__Purpose, import: [link__Import]) repeatable on SCHEMA
 
+type Customer
+  @join__type(graph: CUSTOMERS)
+{
+  id: ID!
+  name: String!
+  email: String!
+  created_at: Timestamp!
+  updated_at: Timestamp
+  deleted_at: Timestamp
+}
+
 type Feature
   @join__type(graph: FEATURES, key: "name")
 {
@@ -31,7 +42,7 @@ type Feature
 }
 
 type Foo
-  @join__type(graph: FOO, key: "id")
+  @join__type(graph: CUSTOMERS, key: "id")
 {
   id: ID!
   name: String
@@ -40,8 +51,8 @@ type Foo
 scalar join__FieldSet
 
 enum join__Graph {
-  FEATURES @join__graph(name: "features", url: "http://localhost:7001/graphql/")
-  FOO @join__graph(name: "foo", url: "http://localhost:7002/graphql")
+  CUSTOMERS @join__graph(name: "customers", url: "http://localhost:7002/graphql")
+  FEATURES @join__graph(name: "features", url: "http://localhost:7001/graphql")
 }
 
 scalar link__Import
@@ -59,9 +70,13 @@ enum link__Purpose {
 }
 
 type Query
+  @join__type(graph: CUSTOMERS)
   @join__type(graph: FEATURES)
-  @join__type(graph: FOO)
 {
+  foo(id: ID!): Foo @join__field(graph: CUSTOMERS)
+  customers: [Customer] @join__field(graph: CUSTOMERS)
   features: [Feature] @join__field(graph: FEATURES)
-  foo(id: ID!): Foo @join__field(graph: FOO)
 }
+
+scalar Timestamp
+  @join__type(graph: CUSTOMERS)

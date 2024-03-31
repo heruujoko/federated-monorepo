@@ -5,7 +5,7 @@ subgraphs:
     schema:
       subgraph_url: http://localhost:7001/graphql
       # file: ../config-service/src/graph/main.graphql
-  foo:
+  customers:
     routing_url: http://localhost:7002/graphql
     schema:
       subgraph_url: http://localhost:7002/graphql
