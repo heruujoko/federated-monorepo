@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+message Empty {}
+
+message Feature {
+  string name = 1;
+  string description = 2;
+  bool enabled = 3;
+}
+
+message FeatureList { repeated Feature features = 1; }
+
+service FeatureService {
+  rpc GetAllFeatures(Empty) returns (FeatureList) {}
+}
