@@ -1,31 +1,11 @@
-type Feature = {
-    name: string
-    description?: string
-    enabled: boolean
-}
+import { getFeatures as logicGetFeatures } from "./logic/features";
+import { Feature } from "./types/feature";
 
 const getFeatures = (_: any,req: any): Feature[] => {
-    console.log({
-        headers: req.headers
-    })
-    return [
-        {
-            name: 'feature1',
-            description: 'this is a feature',
-            enabled: true
-        },
-        {
-            name: 'feature2',
-            description: 'this is another feature',
-            enabled: false
-        }
-    ]
+    const features = logicGetFeatures();
+    return features
 }
 
 export const root = {
     features: getFeatures,
 };
-
-export const gprcResolvers = {
-    getFeatures
-}

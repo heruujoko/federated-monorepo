@@ -4,6 +4,7 @@ import schema from "./schema";
 import { root } from "./resolvers";
 import { loadSync } from "@grpc/proto-loader";
 import { loadPackageDefinition, Server as GRPCServer, ServerCredentials } from "@grpc/grpc-js";
+import registerRPCResolvers from "./rpcResolvers";
 
 const PROTO_PATH = "./src/pb/features.proto";
 // var protoLoader = require("@grpc/proto-loader");
@@ -22,25 +23,7 @@ const protoDefs = loadPackageDefinition(packageDefinition);
 const server = express();
 const grpcServer = new GRPCServer();
 
-// @ts-ignore
-grpcServer.addService(protoDefs.FeatureService.service, {
-  getAllFeatures: (_: any, callback: any) => {
-    callback(null, {
-      features: [
-        {
-            name: 'feature1',
-            description: 'this is a feature',
-            enabled: true
-        },
-        {
-            name: 'feature2',
-            description: 'this is another feature',
-            enabled: false
-        }
-    ]
-    });
-  },
-});
+registerRPCResolvers(grpcServer, protoDefs);
 
 // setup graphql
 server.use(
