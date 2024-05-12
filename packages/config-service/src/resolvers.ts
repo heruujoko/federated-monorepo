@@ -4,7 +4,6 @@ type Feature = {
     enabled: boolean
 }
 
-
 const getFeatures = (_: any,req: any): Feature[] => {
     console.log({
         headers: req.headers
@@ -26,3 +25,7 @@ const getFeatures = (_: any,req: any): Feature[] => {
 export const root = {
     features: getFeatures,
 };
+
+export const gprcResolvers = {
+    getFeatures
+}

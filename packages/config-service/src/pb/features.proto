@@ -11,5 +11,5 @@ message Feature {
 message FeatureList { repeated Feature features = 1; }
 
 service FeatureService {
-  rpc GetAllFeatures(Empty) returns (FeatureList) {}
+  rpc GetFeatures(Empty) returns (FeatureList) {}
 }
