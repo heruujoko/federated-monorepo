@@ -20,11 +20,15 @@ func SetupTransportMethods() error {
 		return methodSetupError
 	}
 
-	log.Printf("SetupTransportMethods: graphql initialized")
+	log.Printf("SetupTransportMethods: graphql initialized :7002")
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = defaultPort
 	}
+
+	go UseGRPCTransport()
+	log.Printf("SetupTransportMethods: grpc initialized :8002")
+
 	log.Fatal(http.ListenAndServe(":"+port, router))
 
 	return nil
